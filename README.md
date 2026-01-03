@@ -48,7 +48,7 @@
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/Turkeyseo/headless-wordpress.git
+git clone https://github.com/wptr-net/headless-wordpress.git
 cd headless-wordpress
 ```
 
@@ -163,11 +163,11 @@ Simply paste your ad code (Google AdSense, etc.) and toggle activation.
 
 ### Vercel (Recommended)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Turkeyseo/headless-wordpress)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/wptr-net/headless-wordpress)
 
 ### Netlify
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Turkeyseo/headless-wordpress)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/wptr-net/headless-wordpress)
 
 ### Self-Hosted
 
@@ -247,7 +247,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 💬 Support
 
 - 🌐 Website: [https://www.wptr.net](https://www.wptr.net)
-- 🐛 Issues: [GitHub Issues](https://github.com/Turkeyseo/headless-wordpress/issues)
+- 🐛 Issues: [GitHub Issues](https://github.com/wptr-net/headless-wordpress/issues)
 
 ---
 
