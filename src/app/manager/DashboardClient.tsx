@@ -1472,7 +1472,7 @@ export default function DashboardClient() {
                                             Explore the source code, report issues, or contribute to the open-source project on GitHub.
                                         </p>
                                         <a
-                                            href="https://github.com/wptr-net/headless-wordpress"
+                                            href="https://github.com/Turkeyseo/headless-wordpress"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className={styles.installButton}
@@ -1757,7 +1757,7 @@ export default function DashboardClient() {
                                     </div>
                                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                                         <span style={{ color: 'var(--manager-muted)' }}>Repository</span>
-                                        <a href="https://github.com/wptr-net/headless-wordpress" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--manager-accent)' }}>
+                                        <a href="https://github.com/Turkeyseo/headless-wordpress" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--manager-accent)' }}>
                                             GitHub
                                         </a>
                                     </div>
