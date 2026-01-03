@@ -1,0 +1,222 @@
+.container {
+    width: 100%;
+}
+
+/* ===== Standard Grid ===== */
+.postGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .postGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .postGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== List Layout ===== */
+.listGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* ===== Magazine Layout (1 Large Left + 1 Medium + 2 Small Right) ===== */
+.magazineGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.75rem;
+    height: 480px;
+}
+
+/* First item - Large left spanning both rows */
+.magazineGrid>*:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1 / -1;
+}
+
+/* Second item - Medium top right */
+.magazineGrid>*:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* Third and Fourth items - Small bottom right side by side */
+.magazineGrid>*:nth-child(3),
+.magazineGrid>*:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* Make bottom 2 items split the space */
+.magazineGrid>*:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+    width: calc(50% - 0.375rem);
+    justify-self: start;
+}
+
+.magazineGrid>*:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+    width: calc(50% - 0.375rem);
+    justify-self: end;
+}
+
+@media (max-width: 900px) {
+    .magazineGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        height: auto;
+        gap: 1rem;
+    }
+
+    .magazineGrid>*:nth-child(1) {
+        grid-column: 1;
+        grid-row: auto;
+        min-height: 350px;
+    }
+
+    .magazineGrid>*:nth-child(2),
+    .magazineGrid>*:nth-child(3),
+    .magazineGrid>*:nth-child(4) {
+        grid-column: 1;
+        grid-row: auto;
+        width: 100%;
+        min-height: 200px;
+    }
+}
+
+/* ===== Carousel/Slider Layout ===== */
+.carouselGrid {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.carouselGrid::-webkit-scrollbar {
+    display: none;
+}
+
+.carouselGrid>* {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+}
+
+@media (max-width: 640px) {
+    .carouselGrid>* {
+        flex: 0 0 85vw;
+    }
+}
+
+/* ===== Masonry Layout ===== */
+.masonryGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.masonryGrid>*:nth-child(1) {
+    grid-row: span 2;
+}
+
+.masonryGrid>*:nth-child(4) {
+    grid-column: span 2;
+}
+
+@media (max-width: 900px) {
+    .masonryGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .masonryGrid>*:nth-child(1) {
+        grid-row: span 1;
+    }
+
+    .masonryGrid>*:nth-child(4) {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .masonryGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Overlay Grid (all cards with overlay) ===== */
+.overlayGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.overlayGrid>* {
+    min-height: 250px;
+}
+
+@media (max-width: 1024px) {
+    .overlayGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .overlayGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Cards Layout (horizontal scroll on mobile) ===== */
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .cardsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .cardsGrid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .cardsGrid>* {
+        flex: 0 0 85%;
+        scroll-snap-align: start;
+    }
+}
+
+/* ===== Load More Button ===== */
+.loadMore {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.loadMore button {
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    border-radius: var(--radius);
+    transition: all 0.2s ease;
+}

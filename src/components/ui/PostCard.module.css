@@ -1,0 +1,496 @@
+/* ===== Base Card ===== */
+.postCard {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.postCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.postCard a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.cardImage {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: var(--secondary);
+}
+
+.cardImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.postCard:hover .cardImage img {
+    transform: scale(1.05);
+}
+
+.cardImagePlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted-foreground);
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--muted) 100%);
+}
+
+.cardContent {
+    padding: 1.25rem;
+}
+
+.cardMeta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.cardCategory {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: var(--accent);
+    color: var(--accent-foreground);
+    border-radius: 4px;
+}
+
+.cardDate {
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+}
+
+.cardTitle {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: var(--foreground);
+}
+
+.cardExcerpt {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.cardFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardAuthor {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.authorAvatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--secondary);
+}
+
+.authorName {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.readTime {
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* ===== List Layout ===== */
+.postCardList {
+    display: flex;
+    gap: 1.5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.postCardList:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.postCardList a {
+    display: flex;
+    gap: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+.postCardList .cardImage {
+    width: 180px;
+    flex-shrink: 0;
+    aspect-ratio: 4/3;
+    border-radius: var(--radius);
+}
+
+.postCardList .cardContent {
+    flex: 1;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 640px) {
+    .postCardList {
+        flex-direction: column;
+    }
+
+    .postCardList a {
+        flex-direction: column;
+    }
+
+    .postCardList .cardImage {
+        width: 100%;
+    }
+}
+
+/* ===== Magazine/Overlay Layout ===== */
+.postCardMagazine {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #1a1a1a;
+    height: 100%;
+    min-height: 150px;
+}
+
+.postCardMagazine a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.postCardMagazine .cardImage {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: unset;
+}
+
+.postCardMagazine .cardImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.postCardMagazine:hover .cardImage img {
+    transform: scale(1.05);
+}
+
+.postCardMagazine .cardImage::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 0, 0, 0.4) 40%,
+            transparent 70%);
+    z-index: 1;
+}
+
+.postCardMagazine .cardImagePlaceholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+}
+
+.postCardMagazine .cardContent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    color: #fff;
+    z-index: 2;
+}
+
+.postCardMagazine .cardMeta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+/* Category with dot indicator */
+.postCardMagazine .cardCategory {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0;
+}
+
+.postCardMagazine .cardCategory::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.postCardMagazine .cardDate {
+    display: none;
+}
+
+.postCardMagazine .cardTitle {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.postCardMagazine .cardExcerpt,
+.postCardMagazine .cardFooter {
+    display: none;
+}
+
+/* Featured/Large Magazine Card - Cover Story Style */
+.postCardMagazineFeatured {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #1a1a1a;
+    height: 100%;
+}
+
+.postCardMagazineFeatured a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.postCardMagazineFeatured .cardImage {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: unset;
+}
+
+.postCardMagazineFeatured .cardImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.postCardMagazineFeatured:hover .cardImage img {
+    transform: scale(1.03);
+}
+
+.postCardMagazineFeatured .cardImage::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.4) 50%,
+            transparent 80%);
+    z-index: 1;
+}
+
+.postCardMagazineFeatured .cardImagePlaceholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+}
+
+.postCardMagazineFeatured .cardContent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    color: #fff;
+    z-index: 2;
+}
+
+.postCardMagazineFeatured .cardMeta {
+    margin-bottom: 1rem;
+}
+
+/* COVER STORY badge style */
+.postCardMagazineFeatured .cardCategory {
+    background: var(--accent);
+    color: var(--accent-foreground);
+    font-size: 0.65rem;
+    padding: 0.35rem 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+}
+
+.postCardMagazineFeatured .cardDate {
+    display: none;
+}
+
+.postCardMagazineFeatured .cardTitle {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.postCardMagazineFeatured .cardExcerpt {
+    display: none;
+}
+
+/* READ STORY link */
+.postCardMagazineFeatured .readStory {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: gap 0.2s ease;
+}
+
+.postCardMagazineFeatured:hover .readStory {
+    gap: 0.75rem;
+}
+
+.postCardMagazineFeatured .cardFooter {
+    display: none;
+}
+
+/* ===== Featured Grid Card ===== */
+.postCardFeatured {
+    grid-column: span 2;
+}
+
+.postCardFeatured .cardImage {
+    aspect-ratio: 21/9;
+}
+
+.postCardFeatured .cardTitle {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .postCardFeatured {
+        grid-column: span 1;
+    }
+
+    .postCardMagazineFeatured {
+        min-height: 300px;
+    }
+
+    .postCardMagazineFeatured .cardTitle {
+        font-size: 1.25rem;
+    }
+}
+
+/* ===== Skeleton Loading ===== */
+.skeleton {
+    background: linear-gradient(90deg,
+            var(--muted) 25%,
+            var(--secondary) 50%,
+            var(--muted) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+.skeletonImage {
+    aspect-ratio: 16/9;
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.skeletonTitle {
+    height: 1.5rem;
+    width: 80%;
+    margin-bottom: 0.5rem;
+    border-radius: var(--radius);
+}
+
+.skeletonText {
+    height: 1rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    border-radius: var(--radius);
+}
+
+.skeletonText:last-child {
+    width: 60%;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}

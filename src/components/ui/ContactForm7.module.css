@@ -1,0 +1,114 @@
+.container {
+    padding: 2rem;
+    background: var(--card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+.formGroup {
+    margin-bottom: 1rem;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.input,
+.textarea,
+.select {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--background);
+    color: var(--foreground);
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+    outline: none;
+    border-color: var(--foreground);
+    box-shadow: 0 0 0 2px var(--secondary);
+}
+
+.textarea {
+    min-height: 120px;
+    max-width: 100%;
+}
+
+.button {
+    padding: 0.75rem 1.5rem;
+    background: var(--foreground);
+    color: var(--background);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity 0.2s;
+    font-size: 1rem;
+}
+
+.button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.message {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.success {
+    background: rgba(22, 163, 74, 0.1);
+    color: #16a34a;
+}
+
+.error {
+    background: rgba(220, 38, 38, 0.1);
+    color: #dc2626;
+}
+
+/* Dynamic Field Styles */
+.checkboxGroup,
+.radioGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.checkboxLabel,
+.radioLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.checkbox,
+.radio {
+    accent-color: var(--foreground);
+    width: 1.1rem;
+    height: 1.1rem;
+    cursor: pointer;
+    margin: 0;
+}
+
+.fileInput {
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,109 @@
+.categoryPage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.pageContent {
+    flex: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    width: 100%;
+}
+
+.categoryHeader {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.categoryBadge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background: var(--accent);
+    color: var(--accent-foreground);
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+}
+
+.categoryTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.categoryDescription {
+    color: var(--muted-foreground);
+    font-size: 1rem;
+}
+
+.categoryMeta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+}
+
+.postCount {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Categories List */
+.categoriesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.categoryCard {
+    display: block;
+    padding: 1.5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--foreground);
+    transition: all 0.2s ease;
+}
+
+.categoryCard:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+}
+
+.categoryCardName {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.categoryCardCount {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+}
+
+/* Not Found */
+.notFound {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.notFoundTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.notFoundDesc {
+    color: var(--muted-foreground);
+    margin-bottom: 2rem;
+}

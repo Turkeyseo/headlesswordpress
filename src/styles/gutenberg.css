@@ -1,0 +1,247 @@
+/* Gutenberg Core Block Styles Reset & Enhancements */
+
+/* Container & Layout */
+.wp-block-columns {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.wp-block-column {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+    .wp-block-columns {
+        flex-direction: column;
+    }
+}
+
+/* Images & Captions */
+.wp-block-image {
+    margin-bottom: 2rem;
+}
+
+.wp-block-image img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+.wp-block-image figcaption {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* Alignments */
+.aligncenter {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alignright {
+    float: right;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.alignleft {
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+}
+
+.alignwide {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.alignfull {
+    max-width: 100vw;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    width: 100vw;
+}
+
+/* Quotes */
+.wp-block-quote {
+    border-left: 4px solid var(--primary);
+    margin: 2rem 0;
+    padding: 1rem 0 1rem 2rem;
+    font-size: 1.25rem;
+    font-style: italic;
+    background: var(--secondary);
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.wp-block-quote cite {
+    display: block;
+    font-size: 0.875rem;
+    font-style: normal;
+    text-align: right;
+    margin-top: 1rem;
+    color: var(--muted-foreground);
+    font-weight: 600;
+}
+
+/* Tables */
+.wp-block-table {
+    margin-bottom: 2rem;
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    display: block;
+}
+
+.wp-block-table table {
+    width: 100%;
+    border: 1px solid var(--border);
+}
+
+.wp-block-table th,
+.wp-block-table td {
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+}
+
+.wp-block-table th {
+    background: var(--secondary);
+    font-weight: 600;
+}
+
+/* Buttons */
+.wp-block-button {
+    margin-bottom: 1rem;
+}
+
+.wp-block-button__link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.wp-block-button__link:hover {
+    opacity: 0.9;
+    color: var(--primary-foreground);
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+/* Code & Pre */
+pre.wp-block-code {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    overflow-x: auto;
+    font-family: monospace;
+    margin-bottom: 2rem;
+    white-space: pre-wrap;
+}
+
+/* Galleries (Strict Grid Layout) */
+.wp-block-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    padding-left: 0 !important;
+    list-style: none !important;
+}
+
+.wp-block-gallery .blocks-gallery-item {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    min-width: 0 !important;
+    list-style: none !important;
+}
+
+/* Ensure parents fit the grid cell */
+.wp-block-gallery .blocks-gallery-item figure,
+.wp-block-gallery .blocks-gallery-item div {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+/* Force Image to Square 1:1 and Cover */
+.wp-block-gallery img {
+    aspect-ratio: 1/1 !important;
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100%;
+    border-radius: var(--radius);
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .wp-block-gallery {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .wp-block-gallery {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Separator */
+hr.wp-block-separator {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 3rem 0;
+}
+
+hr.wp-block-separator.is-style-dots {
+    border: none;
+    text-align: center;
+    height: auto;
+}
+
+hr.wp-block-separator.is-style-dots::before {
+    content: "···";
+    font-size: 2rem;
+    letter-spacing: 1rem;
+    padding-left: 1rem;
+    color: var(--muted-foreground);
+}
+
+/* Embeds */
+.wp-block-embed {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.wp-block-embed-youtube .wp-block-embed__wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+.wp-block-embed-youtube iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}

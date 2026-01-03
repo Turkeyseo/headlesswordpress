@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Site configuration (contains sensitive data)
+site-config.json
+
+# Debug logs
+debug_*.log

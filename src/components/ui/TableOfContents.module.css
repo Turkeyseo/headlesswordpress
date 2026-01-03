@@ -1,0 +1,127 @@
+.toc {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 1rem;
+    /* Adjust based on your main header height */
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.tocHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    background: var(--secondary);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--foreground);
+    border-radius: var(--radius);
+    transition: border-radius 0.3s ease;
+}
+
+.toc.open .tocHeader {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.tocTitleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    overflow: hidden;
+}
+
+.tocIcon {
+    color: var(--muted-foreground);
+    flex-shrink: 0;
+}
+
+.tocActiveTitle {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--muted-foreground);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 640px) {
+    .tocActiveTitle {
+        display: none;
+    }
+}
+
+.toc:not(.open) .tocActiveTitle {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.tocContent {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.toc.open .tocContent {
+    max-height: 500px;
+    /* Adjust as needed or use JS for auto height */
+    overflow-y: auto;
+}
+
+.tocList {
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+}
+
+.tocItem {
+    margin-bottom: 0.5rem;
+}
+
+.tocItem:last-child {
+    margin-bottom: 0;
+}
+
+.tocItem a {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--muted-foreground);
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius);
+    transition: all 0.2s ease;
+    border-left: 2px solid transparent;
+}
+
+.tocItem a:hover {
+    color: var(--foreground);
+    background: var(--secondary);
+}
+
+.tocItem a.active {
+    color: var(--accent-foreground);
+    background: var(--secondary);
+    border-left-color: var(--accent);
+    font-weight: 500;
+}
+
+.tocItem.level3 {
+    padding-left: 1rem;
+}
+
+.tocItem.level4 {
+    padding-left: 2rem;
+}

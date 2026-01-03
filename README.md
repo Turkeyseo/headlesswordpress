@@ -1,36 +1,262 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Headless WordPress with Next.js
 
-## Getting Started
+**The ultimate headless WordPress solution** - Transform any WordPress site into a blazing-fast, modern web application powered by Next.js 16 and React 19.
 
-First, run the development server:
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-blue)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
 
+> 🌐 Created by [WPTR](https://www.wptr.net) - Free & Open Source
+
+---
+
+## ✨ Features
+
+### 🎯 Core Features
+- **⚡ Lightning Fast** - Next.js 16 with React 19 and React Compiler
+- **🔌 Easy Setup** - Connect to any WordPress site in minutes
+- **🎨 Visual Customization** - Theme colors, fonts, and layouts from admin panel
+- **📱 Fully Responsive** - Mobile-first design that looks great everywhere
+- **🔍 SEO Optimized** - Automatic meta tags, sitemaps, and hreflang support
+
+### 🛠️ Admin Dashboard
+- **Homepage Builder** - Drag & drop sections (Hero, Posts Grid, CTA, etc.)
+- **Menu Management** - Primary & footer menus with submenu support
+- **Theme Editor** - Real-time color customization
+- **Ads Management** - Configure ad slots across your site
+- **Pages Manager** - Create local pages without WordPress
+- **Language Settings** - 80+ languages with customizable UI strings
+- **Security** - Password-protected admin panel
+
+### 📊 Technical Highlights
+- **GraphQL Integration** - Efficient data fetching from WordPress
+- **ISR Support** - Incremental Static Regeneration for fresh content
+- **Image Optimization** - Next.js Image component with lazy loading
+- **CSS Modules** - Scoped, optimized styling
+- **TypeScript** - Full type safety
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+ 
+- A WordPress site with GraphQL plugin (WPGraphQL)
+
+### Installation
+
+1. **Clone the repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Turkeyseo/headless-wordpress.git
+cd headless-wordpress
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Start development server**
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. **Open your browser**
+Navigate to `http://localhost:3000/install` and follow the setup wizard.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📖 Configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### WordPress Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Install [WPGraphQL](https://wordpress.org/plugins/wp-graphql/) plugin on your WordPress site
+2. (Optional) Install [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) for enhanced SEO data
+3. Ensure your WordPress permalinks are set to "Post name"
 
-## Deploy on Vercel
+### Environment Variables (Optional)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Create a `.env.local` file:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```env
+# Optional: Override WordPress URL (otherwise set via admin panel)
+WORDPRESS_URL=https://your-wordpress-site.com
+```
+
+---
+
+## 🏗️ Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── manager/           # Admin dashboard
+│   ├── install/           # Setup wizard
+│   ├── category/          # Category pages
+│   └── [...slug]/         # Dynamic post/page routes
+├── components/
+│   ├── layout/            # Header, Footer
+│   ├── sections/          # Homepage sections
+│   ├── ui/                # Reusable UI components
+│   └── manager/           # Admin components
+├── lib/
+│   ├── wordpress.ts       # GraphQL queries
+│   ├── config.ts          # Site configuration
+│   ├── actions.ts         # Server actions
+│   └── utils.ts           # Helper functions
+└── styles/                # Global styles
+```
+
+---
+
+## 🎨 Customization
+
+### Theme Colors
+
+Access the admin panel at `/manager` and navigate to **Theme** tab to customize:
+- Primary & Secondary colors
+- Background & Foreground
+- Accent colors
+- Border & Muted colors
+
+### Homepage Sections
+
+Available section types:
+- **Hero** - Full-width banner with CTA
+- **Posts Grid** - Card-based post layout
+- **Posts List** - Compact list layout
+- **Posts Carousel** - Sliding post cards
+- **Category Tabs** - Tabbed post navigation
+- **CTA** - Call-to-action blocks
+- **HTML Block** - Custom HTML content
+
+---
+
+## 🌍 Multi-Language Support
+
+The system supports 80+ languages including:
+- Major European languages (EN, DE, FR, ES, IT, PT, etc.)
+- Asian languages (ZH, JA, KO, HI, TH, VI, etc.)
+- Middle Eastern languages (AR, FA, HE, TR, etc.)
+- African languages (SW, AM, HA, etc.)
+- And many more...
+
+Configure language and customize all UI strings from the **Languages** tab in admin panel.
+
+---
+
+## 📢 Ads Management
+
+Built-in ad management with predefined slots:
+- Header Top
+- Homepage - Below Hero
+- Post Top / Middle / Bottom
+- Sidebar Top
+- Footer Top
+
+Simply paste your ad code (Google AdSense, etc.) and toggle activation.
+
+---
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Turkeyseo/headless-wordpress)
+
+### Netlify
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Turkeyseo/headless-wordpress)
+
+### Self-Hosted
+
+```bash
+npm run build
+npm start
+```
+
+---
+
+## 🔒 Security
+
+- Admin panel is password-protected
+- Credentials stored with bcrypt hashing
+- No direct database access from frontend
+- WordPress remains hidden from visitors
+
+---
+
+## 🔄 Auto-Update System
+
+This project includes a built-in update system that checks for new versions from GitHub:
+
+### Features
+- **Version Check** - Automatically checks for new releases on startup
+- **One-Click Update** - Update directly from the admin panel
+- **Configuration Preserved** - Your `site-config.json` (settings, menus, theme) is preserved during updates
+- **Release Notes** - View what's new before updating
+
+### How to Update
+
+1. Open the admin panel at `/manager`
+2. Click on the **Updates** tab
+3. If a new version is available, click **Install Update**
+4. Restart the application after the update
+
+### Manual Update
+
+If you prefer to update manually:
+
+```bash
+# Backup your configuration
+cp site-config.json site-config.backup.json
+
+# Pull latest changes
+git fetch origin main
+git reset --hard origin/main
+
+# Restore your configuration
+cp site-config.backup.json site-config.json
+
+# Install dependencies and rebuild
+npm install
+npm run build
+```
+
+---
+
+## 📝 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 💬 Support
+
+- 🌐 Website: [https://www.wptr.net](https://www.wptr.net)
+- 🐛 Issues: [GitHub Issues](https://github.com/Turkeyseo/headless-wordpress/issues)
+
+---
+
+## ⭐ Star History
+
+If you find this project useful, please consider giving it a star! ⭐
+
+---
+
+<p align="center">
+  Made with ❤️ by <a href="https://www.wptr.net">WPTR</a>
+</p>

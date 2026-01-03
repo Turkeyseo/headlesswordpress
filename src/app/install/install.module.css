@@ -1,0 +1,652 @@
+/* Vercel-style Dark Theme Install Page */
+
+.installPage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: #000;
+    color: #ededed;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background gradient */
+.bgGradient {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(0, 112, 243, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Install Card */
+.installCard {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 640px;
+    background: #0a0a0a;
+    border: 1px solid #1f1f1f;
+    border-radius: 16px;
+    padding: 2rem;
+}
+
+/* Header */
+.installHeader {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.logoWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.installLogo {
+    width: 36px;
+    height: 36px;
+    background: #ededed;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+}
+
+.logoText {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+/* Title */
+.titleSection {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.installTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.025em;
+}
+
+.installSubtitle {
+    font-size: 0.9rem;
+    color: #888;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Steps Progress */
+.stepsProgress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 2rem;
+}
+
+.stepItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stepCircle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.stepCircle.inactive {
+    background: #1a1a1a;
+    color: #666;
+    border: 1px solid #333;
+}
+
+.stepCircle.active {
+    background: #0070f3;
+    color: #fff;
+    border: 1px solid #0070f3;
+}
+
+.stepCircle.completed {
+    background: #00d47b;
+    color: #000;
+    border: 1px solid #00d47b;
+}
+
+.stepLabel {
+    font-size: 0.75rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.stepLabel.activeLabel {
+    color: #ededed;
+}
+
+.stepConnector {
+    width: 40px;
+    height: 1px;
+    background: #333;
+    margin: 0 0.5rem;
+    transition: background 0.2s ease;
+}
+
+.stepConnector.active {
+    background: #00d47b;
+}
+
+/* Step Content */
+.stepContent {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stepBody {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Input Group */
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.inputLabel {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #888;
+}
+
+.urlInputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 0.875rem;
+    color: #666;
+    pointer-events: none;
+}
+
+.urlInput {
+    width: 100%;
+    padding: 0.875rem 0.875rem 0.875rem 2.75rem;
+    background: #000;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #ededed;
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease;
+}
+
+.urlInput:focus {
+    outline: none;
+    border-color: #0070f3;
+}
+
+.urlInput::placeholder {
+    color: #555;
+}
+
+.inputHint {
+    font-size: 0.75rem;
+    color: #666;
+    margin: 0;
+}
+
+.inputHint a {
+    color: #0070f3;
+    text-decoration: none;
+}
+
+.inputHint a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.primaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    background: #ededed;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.primaryButton:hover:not(:disabled) {
+    background: #fff;
+}
+
+.primaryButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.secondaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    background: transparent;
+    color: #ededed;
+    border: 1px solid #333;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.secondaryButton:hover {
+    background: #111;
+    border-color: #444;
+}
+
+.ghostButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    background: transparent;
+    color: #888;
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.ghostButton:hover {
+    color: #ededed;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Status Message */
+.statusMessage {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+}
+
+.statusMessage.success {
+    background: rgba(0, 212, 123, 0.1);
+    color: #00d47b;
+    border: 1px solid rgba(0, 212, 123, 0.2);
+}
+
+.statusMessage.error {
+    background: rgba(255, 77, 77, 0.1);
+    color: #ff4d4d;
+    border: 1px solid rgba(255, 77, 77, 0.2);
+}
+
+/* Loading State */
+.loadingState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    color: #888;
+    gap: 1rem;
+}
+
+/* Stats Grid */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.statCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem 1rem;
+    background: #000;
+    border: 1px solid #1f1f1f;
+    border-radius: 12px;
+}
+
+.statNumber {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ededed;
+    line-height: 1;
+}
+
+.statLabel {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 0.375rem;
+}
+
+/* Warning Box */
+.warningBox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: rgba(245, 166, 35, 0.1);
+    border: 1px solid rgba(245, 166, 35, 0.2);
+    border-radius: 8px;
+    color: #f5a623;
+}
+
+.warningBox strong {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.warningBox p {
+    margin: 0;
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+/* Site Info Box */
+.siteInfoBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #000;
+    border: 1px solid #1f1f1f;
+    border-radius: 8px;
+}
+
+.siteInfoLabel {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.siteInfoValue {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ededed;
+}
+
+/* Theme Grid */
+.themeGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.themeCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid #333;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.themeCard:hover {
+    border-color: #555;
+}
+
+.themeCard.selected {
+    border-color: #0070f3;
+    background: rgba(0, 112, 243, 0.05);
+}
+
+.themePreview {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #222;
+}
+
+.themePreview.light {
+    background: #f5f5f5;
+}
+
+.themePreview.dark {
+    background: #1a1a1a;
+}
+
+.themePreview.color {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.previewHeader {
+    height: 20%;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.themePreview.dark .previewHeader {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.themePreview.color .previewHeader {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.previewContent {
+    padding: 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 6%;
+}
+
+.previewLine {
+    height: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.themePreview.dark .previewLine {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.themePreview.color .previewLine {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.themeName {
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 500;
+}
+
+.themeCard.selected .themeName {
+    color: #ededed;
+}
+
+.themeCheck {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 20px;
+    height: 20px;
+    background: #0070f3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* Success Screen */
+.successScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.successIcon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #0070f3 0%, #00d47b 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.successMessage {
+    margin-bottom: 2rem;
+}
+
+.successMessage p {
+    margin: 0;
+    color: #ededed;
+    font-size: 0.95rem;
+}
+
+.successMessage strong {
+    color: #0070f3;
+}
+
+.successHint {
+    margin-top: 0.75rem !important;
+    font-size: 0.85rem !important;
+    color: #888 !important;
+}
+
+.successButtons {
+    display: flex;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.successButtons .primaryButton,
+.successButtons .secondaryButton {
+    flex: 1;
+}
+
+/* Step Navigation */
+.stepNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #1f1f1f;
+}
+
+/* Footer */
+.installFooter {
+    position: relative;
+    z-index: 1;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.installFooter p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.installFooter strong {
+    color: #888;
+    font-weight: 500;
+}
+
+.installFooter a {
+    color: #0070f3;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.installFooter a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+    .installCard {
+        padding: 1.5rem;
+    }
+
+    .statsGrid,
+    .themeGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .successButtons {
+        flex-direction: column;
+    }
+
+    .stepConnector {
+        width: 24px;
+    }
+
+    .stepLabel {
+        display: none;
+    }
+}

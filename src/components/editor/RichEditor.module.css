@@ -1,0 +1,215 @@
+.editorContainer {
+    border: 1px solid var(--manager-border, #1f1f1f);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--manager-bg, #000);
+}
+
+/* Toolbar */
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    background: var(--manager-hover, #111);
+    border-bottom: 1px solid var(--manager-border, #1f1f1f);
+}
+
+.toolbarGroup {
+    display: flex;
+    gap: 2px;
+}
+
+.toolbarDivider {
+    width: 1px;
+    height: 24px;
+    background: var(--manager-border, #1f1f1f);
+    margin: 0 0.25rem;
+}
+
+.toolbarButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--manager-muted, #888);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.toolbarButton:hover {
+    background: var(--manager-active, #1a1a1a);
+    color: var(--manager-foreground, #ededed);
+}
+
+.toolbarButton:active {
+    background: var(--manager-border, #1f1f1f);
+}
+
+/* Editor Area */
+.editor {
+    padding: 1rem;
+    color: var(--manager-foreground, #ededed);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    outline: none;
+    overflow-y: auto;
+}
+
+.editor:empty::before {
+    content: attr(data-placeholder);
+    color: var(--manager-muted, #888);
+    pointer-events: none;
+}
+
+.editor h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 1rem 0 0.5rem;
+}
+
+.editor h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem;
+}
+
+.editor h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0.75rem 0 0.5rem;
+}
+
+.editor p {
+    margin: 0.5rem 0;
+}
+
+.editor a {
+    color: var(--manager-accent, #0070f3);
+    text-decoration: underline;
+}
+
+.editor ul,
+.editor ol {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.editor li {
+    margin: 0.25rem 0;
+}
+
+.editor blockquote {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 3px solid var(--manager-accent, #0070f3);
+    background: var(--manager-hover, #111);
+    font-style: italic;
+}
+
+.editor pre {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: var(--manager-hover, #111);
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 0.85rem;
+}
+
+.editor img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.modalContent {
+    background: var(--manager-card, #0a0a0a);
+    border: 1px solid var(--manager-border, #1f1f1f);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modalTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--manager-foreground, #ededed);
+}
+
+.modalField {
+    margin-bottom: 1rem;
+}
+
+.modalField label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--manager-muted, #888);
+    margin-bottom: 0.5rem;
+}
+
+.modalField input {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    background: var(--manager-bg, #000);
+    border: 1px solid var(--manager-border, #1f1f1f);
+    border-radius: 6px;
+    color: var(--manager-foreground, #ededed);
+    font-size: 0.875rem;
+}
+
+.modalField input:focus {
+    outline: none;
+    border-color: var(--manager-accent, #0070f3);
+}
+
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.modalActions button {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border: 1px solid var(--manager-border, #1f1f1f);
+    background: transparent;
+    color: var(--manager-foreground, #ededed);
+}
+
+.modalActions button:hover {
+    background: var(--manager-hover, #111);
+}
+
+.primaryButton {
+    background: var(--manager-foreground, #ededed) !important;
+    color: var(--manager-bg, #000) !important;
+    border: none !important;
+}
+
+.primaryButton:hover {
+    background: #d4d4d4 !important;
+}

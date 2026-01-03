@@ -1,0 +1,141 @@
+.loginPage {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+}
+
+.loginCard {
+    width: 100%;
+    max-width: 400px;
+    background-color: #111;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 40px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.loginHeader {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    margin-bottom: 20px;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ccc;
+}
+
+.input {
+    background-color: #222;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #fff;
+    background-color: #2a2a2a;
+}
+
+.loginButton {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.loginButton:hover:not(:disabled) {
+    background-color: #e0e0e0;
+    transform: translateY(-1px);
+}
+
+.loginButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.errorMessage {
+    background-color: rgba(255, 68, 68, 0.1);
+    color: #ff4444;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid rgba(255, 68, 68, 0.2);
+}
+
+.footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.backLink {
+    color: #666;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.backLink:hover {
+    color: #fff;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
