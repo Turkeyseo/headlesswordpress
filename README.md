@@ -165,6 +165,17 @@ Simply paste your ad code (Google AdSense, etc.) and toggle activation.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Turkeyseo/headless-wordpress&env=WORDPRESS_URL)
 
+> **Important for Vercel Users:**
+>
+> Vercel uses a **Read-Only Filesystem** in production. This means the Admin Panel cannot write changes to `site-config.json`.
+>
+> To fix this, you MUST set your WordPress URL as an Environment Variable:
+> 1. Go to Vercel Dashboard > Settings > Environment Variables
+> 2. Add Key: `WORDPRESS_URL`
+> 3. Add Value: `https://your-wordpress-site.com` (Your actual site URL)
+>
+> The "Deploy" button above will automatically ask for this, but if you deploy manually, don't forget it!
+
 ### Netlify
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Turkeyseo/headless-wordpress)
