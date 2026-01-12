@@ -161,7 +161,22 @@ Simply paste your ad code (Google AdSense, etc.) and toggle activation.
 
 ## 🚀 Deployment
 
-### Self-Hosted
+### Vercel / Netlify (Read-Only Environments)
+
+This project uses a JSON-based configuration file (`site-config.json`) which requires write access.
+Serverless platforms like Vercel and Netlify use a **Read-Only Filesystem**, meaning:
+1.  **Installation Wizard will not work** (cannot save config).
+2.  **Admin Panel changes will not be saved** (theme, menus, etc. will reset).
+
+**Recommended Workflow for Vercel/Netlify:**
+1.  Run the project locally (`npm run dev`).
+2.  Complete the installation and customize your site (Theme, Menus, Homepage) via `http://localhost:3000/manager`.
+3.  Your changes are saved to `site-config.json`.
+4.  Commit and Push the `site-config.json` file to your Git repository.
+5.  Deploy to Vercel/Netlify (connect your repo).
+    *   *Note: Ensure you set the `WORDPRESS_URL` environment variable in your Vercel project settings.*
+
+### Self-Hosted (VPS / Node.js)
 
 ```bash
 npm run build
