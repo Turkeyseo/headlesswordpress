@@ -67,17 +67,28 @@ const DEFAULT_CONFIG: SiteConfig = {
 };
 
 export const getSiteConfig = (): SiteConfig => {
-  if (!fs.existsSync(CONFIG_PATH)) {
-    return DEFAULT_CONFIG;
+  let config = DEFAULT_CONFIG;
+
+  if (fs.existsSync(CONFIG_PATH)) {
+    try {
+      const fileContent = fs.readFileSync(CONFIG_PATH, 'utf-8');
+      config = { ...DEFAULT_CONFIG, ...JSON.parse(fileContent) };
+    } catch (error) {
+      console.error("Failed to parse site-config.json:", error);
+    }
   }
 
-  try {
-    const fileContent = fs.readFileSync(CONFIG_PATH, 'utf-8');
-    return { ...DEFAULT_CONFIG, ...JSON.parse(fileContent) };
-  } catch (error) {
-    console.error("Failed to parse site-config.json:", error);
-    return DEFAULT_CONFIG;
+  // Override with environment variables (critical for Vercel)
+  const envUrl = process.env.WORDPRESS_URL || process.env.NEXT_PUBLIC_WORDPRESS_URL;
+  if (envUrl) {
+    config.wordpressUrl = envUrl;
+    // If we have a URL from env, treat as installed unless explicitly false
+    if (config.installed === false) {
+      config.installed = true;
+    }
   }
+
+  return config;
 };
 
 export const updateSiteConfig = (newConfig: Partial<SiteConfig>): SiteConfig => {

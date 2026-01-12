@@ -487,12 +487,8 @@ export const getRelatedPosts = async (
 export const getSiteCounts = async (wpUrl: string): Promise<{ posts: number; pages: number; categories: number }> => {
   // Construct REST API base URL
   const baseUrl = wpUrl.replace(/\/graphql\/?$/, '').replace(/\/$/, '');
-  const logFile = path.join(process.cwd(), 'debug_counts.log');
-
   const log = (msg: string) => {
-    try {
-      fs.appendFileSync(logFile, `${new Date().toISOString()}: ${msg}\n`);
-    } catch { }
+    console.log(`[SiteCounts] ${msg}`);
   };
 
   log(`Starting REST API count for ${baseUrl}`);
