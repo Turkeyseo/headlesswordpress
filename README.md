@@ -7,7 +7,7 @@
 [![React](https://img.shields.io/badge/React-19-blue)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
 
-> 🌐 Created by [WPTR](https://www.wptr.net) - Free & Open Source
+> 🌐 Created by [Whspe](https://www.whspe.com) - Free & Open Source
 
 ---
 
@@ -253,8 +253,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 💬 Support
 
-- 🌐 Website: [https://www.wptr.net](https://www.wptr.net)
-- 🐛 Issues: [GitHub Issues](https://github.com/Turkeyseo/headless-wordpress/issues)
+- 🌐 Website: [https://www.whspe.net](https://www.whspe.com)
+- 🐛 Issues: [GitHub Issues](https://github.com/Turkeyseo/headlesswordpress/issues)
 
 ---
 
