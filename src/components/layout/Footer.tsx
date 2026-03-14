@@ -9,8 +9,8 @@ interface FooterProps {
     config: SiteConfig;
 }
 
-// WPTR Icon
-const WptrIcon = () => (
+// Whspe Icon
+const WhspeIcon = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM5.9 16.8L8.1 8H10.1L11.5 14.5L12.9 8H14.9L17.1 16.8H14.9L14.1 12.5L13 16.8H10L8.9 12.5L8.1 16.8H5.9Z" fill="currentColor" />
     </svg>
@@ -161,8 +161,8 @@ export default async function Footer({ config }: FooterProps) {
                         &copy; {currentYear} {config.siteName}. All rights reserved.
                     </p>
                     <div className={styles.footerLinks}>
-                        <a href="http://www.wptr.net" target="_blank" rel="noopener noreferrer" className={styles.iconLink} aria-label="WPTR">
-                            <WptrIcon />
+                        <a href="http://www.whspe.com" target="_blank" rel="noopener noreferrer" className={styles.iconLink} aria-label="Whspe">
+                            <WhspeIcon />
                         </a>
                         <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className={styles.iconLink} aria-label="Next.js">
                             <NextJsIcon />

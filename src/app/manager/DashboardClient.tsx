@@ -1447,7 +1447,7 @@ export default function DashboardClient() {
                                             Need help setting up or customizing your site? Check out our comprehensive installation guide and detailed documentation.
                                         </p>
                                         <a
-                                            href="https://www.wptr.net/install"
+                                            href="https://www.whspe.com/install"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className={styles.installButton}

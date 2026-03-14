@@ -479,7 +479,7 @@ export default function InstallWizard() {
 
             {/* Footer */}
             <div className={styles.installFooter}>
-                <p>Powered by <strong>Next.js</strong> + <strong>WordPress</strong> | <a href="https://wptr.net" target="_blank" rel="noopener noreferrer">Wptr</a></p>
+                <p>Powered by <strong>Next.js</strong> + <strong>WordPress</strong> | <a href="https://whspe.com" target="_blank" rel="noopener noreferrer">Whspe</a></p>
             </div>
         </div>
     );
