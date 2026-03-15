@@ -48,8 +48,8 @@
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/Turkeyseo/headless-wordpress.git
-cd headless-wordpress
+git clone https://github.com/Turkeyseo/headlesswordpress.git
+cd headlesswordpress
 ```
 
 2. **Install dependencies**
@@ -254,7 +254,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 💬 Support
 
 - 🌐 Website: [https://www.whspe.com](https://www.whspe.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/Turkeyseo/headless-wordpress/issues)
+- 🐛 Issues: [GitHub Issues](https://github.com/Turkeyseo/headlesswordpress/issues)
 
 ---
 
